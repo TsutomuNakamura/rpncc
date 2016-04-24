@@ -6,6 +6,11 @@
   "scripts": {
     "test": "ava -v"
   },
+  "ava": {
+    "files": [
+      "test/**/test-*.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TsutomuNakamura/rpncc.git"

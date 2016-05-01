@@ -31,5 +31,8 @@
   "devDependencies": {
     "ava": "^0.14.0",
     "chance": "^1.0.2"
+  },
+  "dependencies": {
+    "chance": "^1.0.2"
   }
 }

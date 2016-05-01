@@ -12,11 +12,11 @@ function Rpncc() {
                           };
 
     var instractions = {};
-    instractions['^'] = function(arg1, arg2) { return Math.pow(parseInt(arg1), parseInt(arg2)); };
-    instractions['*'] = function(arg1, arg2) { return parseInt(arg1) * parseInt(arg2); };
-    instractions['/'] = function(arg1, arg2) { return parseInt(arg1) / parseInt(arg2); };
-    instractions['+'] = function(arg1, arg2) { return parseInt(arg1) + parseInt(arg2); };
-    instractions['-'] = function(arg1, arg2) { return parseInt(arg1) - parseInt(arg2); };
+    instractions['^'] = function(arg1, arg2) { return Math.pow(Number(arg1), Number(arg2)); };
+    instractions['*'] = function(arg1, arg2) { return Number(arg1) * Number(arg2); };
+    instractions['/'] = function(arg1, arg2) { return Number(arg1) / Number(arg2); };
+    instractions['+'] = function(arg1, arg2) { return Number(arg1) + Number(arg2); };
+    instractions['-'] = function(arg1, arg2) { return Number(arg1) - Number(arg2); };
 
     const I_LEFT_NODE   = 0;
     const I_OPERATOR    = 1;

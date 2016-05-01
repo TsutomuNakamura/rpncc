@@ -1,3 +1,4 @@
+var chance = require('chance').Chance();
 
 function Rpncc() {
     var myself          = this;
@@ -106,6 +107,26 @@ function Rpncc() {
 
         return left.concat(tree[I_OPERATOR], right);
     };
+
+    this.convert_by_someone = function(expression, callback) {
+
+        var err = undefined;
+        var result = {author: chance.name()};
+
+        if (chance.bool({likelihood: 3})) {
+            err = Error("Sorry, " + result.author + " is absent right now.");
+        } else {
+            // Human sometimes take mistakes...
+            result.answer = chance.bool({likelihood: 3})
+                                ? chance.shuffle(expression)
+                                : myself.convert(expression);
+        };
+
+        setTimeout(
+            callback(err, result),
+            chance.integer({min: 200, max: 3000})
+        );
+    }
 }
 module.exports = Rpncc;
 

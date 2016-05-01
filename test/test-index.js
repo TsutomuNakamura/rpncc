@@ -129,5 +129,63 @@ test('rpn#calculate should return 1 if the value "1 2 * 3 + 4 -" is passed', t =
 });
 
 
+test('rpn#revert should return "1 + 2" if the value "1 2 +" is passed', t => {
+    t.true(rpn.revert(["1", "2", "+"]).equals(["1", "+", "2"]));
+});
 
+test('rpn#revert should return "1 - 2" if the value "1 2 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "-"]).equals(["1", "-", "2"]));
+});
+
+test('rpn#revert should return "1 * 2" if the value "1 2 *" is passed', t => {
+    t.true(rpn.revert(["1", "2", "*"]).equals(["1", "*", "2"]));
+});
+
+test('rpn#revert should return "1 / 2" if the value "1 2 /" is passed', t => {
+    t.true(rpn.revert(["1", "2", "/"]).equals(["1", "/", "2"]));
+});
+
+test('rpn#revert should return "1 + 2 * 3" if the value "1 2 3 * +" is passed', t => {
+    t.true(rpn.revert(["1", "2", "3", "*", "+"]).equals(["1", "+", "2", "*", "3"]));
+});
+
+test('rpn#revert should return "1 / 2 - 3" if the value "1 2 / 3 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "/", "3", "-"]).equals(["1", "/", "2", "-", "3"]));
+});
+
+test('rpn#revert should return "1 + 2 - 3" if the value "1 2 + 3 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "+", "3", "-"]).equals(["1", "+", "2", "-", "3"]));
+});
+
+test('rpn#revert should return "1 * 2 / 3" if the value "1 2 * 3 /" is passed', t => {
+    t.true(rpn.revert(["1", "2", "*", "3", "/"]).equals(["1", "*", "2", "/", "3"]));
+});
+
+test('rpn#revert should return "1 + 2 - 3 + 4" if the value "1 2 + 3 - 4 +" is passed', t => {
+    t.true(rpn.revert(["1", "2", "+", "3", "-", "4", "+"]).equals(["1", "+", "2", "-", "3", "+", "4"]));
+});
+
+test('rpn#revert should return "1 * 2 / 3 * 4" if the value "1 2 * 3 / 4 *" is passed', t => {
+    t.true(rpn.revert(["1", "2", "*", "3", "/", "4", "*"]).equals(["1", "*", "2", "/", "3", "*", "4"]));
+});
+
+test('rpn#revert should return "1 + 2 * 3 / 4" if the value "1 2 3 * 4 / +" is passed', t => {
+    t.true(rpn.revert(["1", "2", "3", "*", "4", "/", "+"]).equals(["1", "+", "2", "*", "3", "/", "4"]));
+});
+
+test('rpn#revert should return "1 / 2 * 3 - 4" if the value "1 2 / 3 * 4 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "/", "3", "*", "4", "-"]).equals(["1", "/", "2", "*", "3", "-", "4"]));
+});
+
+test('rpn#revert should return "1 + 2 - 3 * 4" if the value "1 2 + 3 4 * -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "+", "3", "4", "*", "-"]).equals(["1", "+", "2", "-", "3", "*", "4"]));
+});
+
+test('rpn#revert should return "1 + 2 / 3 - 4" if the value "1 2 3 / + 4 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "3", "/", "+", "4", "-"]).equals(["1", "+", "2", "/", "3", "-", "4"]));
+});
+
+test('rpn#revert should return "1 * 2 + 3 - 4" if the value "1 2 * 3 + 4 -" is passed', t => {
+    t.true(rpn.revert(["1", "2", "*", "3", "+", "4", "-"]).equals(["1", "*", "2", "+", "3", "-", "4"]));
+});
 

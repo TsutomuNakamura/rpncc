@@ -79,15 +79,14 @@ function Rpncc() {
             }
         }
 
-        // return stack[0];
         return myself.convert_reverted_to_array(stack[0]);
     };
 
     this.convert_reverted_to_array = function(tree) {
         if(!Array.isArray(tree)) return tree;
 
-        var left    = myself.stringify(tree[I_LEFT_NODE]);
-        var right   = myself.stringify(tree[I_RIGHT_NODE]);
+        var left    = myself.convert_reverted_to_array(tree[I_LEFT_NODE]);
+        var right   = myself.convert_reverted_to_array(tree[I_RIGHT_NODE]);
 
         if(Array.isArray(tree[I_LEFT_NODE])
                 && (operators[tree[I_LEFT_NODE][I_OPERATOR]] < operators[tree[I_OPERATOR]]
@@ -103,10 +102,10 @@ function Rpncc() {
             right.push(')');
         }
 
-        // left.push(tree[I_OPERATOR]);
-        left.concat(tree[I_OPERATOR], right);
-    };
+        if(!Array.isArray(left)) left = [left];
 
+        return left.concat(tree[I_OPERATOR], right);
+    };
 }
 module.exports = Rpncc;
 

@@ -111,6 +111,7 @@ function Rpncc() {
 
         var err = undefined;
         var result = {author: chance.name()};
+        result.gender = chance.gender();
 
         if (chance.bool({likelihood: 3})) {
             err = Error("Sorry, " + result.author + " is absent right now.");
@@ -122,8 +123,10 @@ function Rpncc() {
         };
 
         setTimeout(
-            callback(err, result),
-            chance.integer({min: 200, max: 3000})
+            callback,
+            chance.integer({min: 200, max: 3000}),
+            err,
+            result
         );
     }
 }

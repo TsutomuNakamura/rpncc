@@ -1,6 +1,6 @@
 {
   "name": "rpncc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reverse Polish Notation calculator/converter for js",
   "main": "index.js",
   "scripts": {

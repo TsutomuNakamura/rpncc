@@ -64,7 +64,6 @@ function Rpncc() {
         return (expression.length === 1? expression[0]: undefined);
     };
 
-
     this.revert = function(expression) {
         var argument;
         var stack = [];

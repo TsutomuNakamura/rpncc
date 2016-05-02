@@ -19,3 +19,7 @@ console.log(rpn.convert(["1", "+", "2", "*", "3"]));     // -> [ '1', '2', '3', 
 console.log(rpn.calculate([ '1', '2', '3', '*', '+' ])); // -> 7
 console.log(rpn.revert([ '1', '2', '3', '*', '+' ]));    // -> ["1", "+", "2", "*", "3"]
 ```
+
+## License
+This software is released under the MIT License, see LICENSE.txt.
+

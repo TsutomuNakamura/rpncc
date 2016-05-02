@@ -12,8 +12,8 @@ $ npm install rpncc
 
 Import this module in your source code and call like below.
 ```javascript
-var Rpncc = require('rpncc');
-var rpn   = new Rpncc();
+var Rpn = require('rpncc');
+var rpn = new Rpn();
 
 console.log(rpn.convert(["1", "+", "2", "*", "3"]));     // -> [ '1', '2', '3', '*', '+' ]
 console.log(rpn.calculate([ '1', '2', '3', '*', '+' ])); // -> 7

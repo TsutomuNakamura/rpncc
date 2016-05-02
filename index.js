@@ -107,14 +107,13 @@ function Rpncc() {
         return left.concat(tree[I_OPERATOR], right);
     };
 
-    this.convert_by_someone = function(expression, callback) {
+    this.convert_by_someone = function(expression) {
 
         var err = undefined;
-        var result = {author: chance.name()};
-        result.gender = chance.gender();
+        var result = {representative: chance.name()};
 
         if (chance.bool({likelihood: 3})) {
-            err = Error("Sorry, " + result.author + " is absent right now.");
+            result.error = Error("Sorry, " + result.representative + " is absent right now.");
         } else {
             // Human sometimes take mistakes...
             result.answer = chance.bool({likelihood: 3})
@@ -122,12 +121,13 @@ function Rpncc() {
                                 : myself.convert(expression);
         };
 
-        setTimeout(
-            callback,
-            chance.integer({min: 200, max: 3000}),
-            err,
-            result
-        );
+        return new Promise(function (resolve) {
+            setTimeout(
+                resolve,
+                chance.integer({min: 200, max: 3000}),
+                result
+            );
+        });
     }
 }
 module.exports = Rpncc;

@@ -1,5 +1,7 @@
 # rpncc
-[![Build Status](https://travis-ci.org/TsutomuNakamura/rpncc.svg?branch=develop)](https://travis-ci.org/TsutomuNakamura/rpncc) 
+[![Build Status](https://travis-ci.org/TsutomuNakamura/rpncc.svg?branch=develop)](https://travis-ci.org/TsutomuNakamura/rpncc) [![Dependency Status](https://gemnasium.com/badges/github.com/TsutomuNakamura/rpncc.svg)](https://gemnasium.com/github.com/TsutomuNakamura/rpncc) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/TsutomuNakamura/rpncc) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://en.wikipedia.org/wiki/MIT_License)
+
+
 
 This is a program for Reverse Polish notation utility.
 It converts or calculates a expressions to Reverse Polish notation.

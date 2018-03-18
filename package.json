@@ -34,7 +34,6 @@
     "sinon": "^4.4.6"
   },
   "dependencies": {
-    "chance": "^1.0.13",
-    "save": "^2.3.2"
+    "chance": "^1.0.13"
   }
 }

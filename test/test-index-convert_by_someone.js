@@ -6,7 +6,7 @@ import './lib/load_prototypes';
 
 var ccc = 0;
 
-test.cb.beforeEach(t => {
+test.beforeEach.cb(t => {
     t.context.stub = {};
     t.context.stub.chance = {
         bool: () => { return false; },
@@ -19,7 +19,7 @@ test.cb.beforeEach(t => {
     setTimeout(t.end);
 });
 
-test.cb.beforeEach(t => {
+test.beforeEach.cb(t => {
     setTimeout(t.end);
 });
 

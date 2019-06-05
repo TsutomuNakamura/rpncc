@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/TsutomuNakamura/rpncc#readme",
   "devDependencies": {
-    "ava": "^1.2.1",
+    "ava": "^2.0.0",
     "rewire": "^4.0.1",
-    "sinon": "^7.2.4"
+    "sinon": "^7.3.2"
   },
   "dependencies": {
     "chance": "^1.0.18"

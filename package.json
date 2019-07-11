@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/TsutomuNakamura/rpncc#readme",
   "devDependencies": {
-    "ava": "^2.0.0",
+    "ava": "^2.2.0",
     "rewire": "^4.0.1",
     "sinon": "^7.3.2"
   },

@@ -1,6 +1,6 @@
-import test from 'ava';
-import Rpncc from '../index';
-import './lib/load_prototypes';
+const test = require('ava');
+const Rpncc = require('../index');
+require('./lib/load_prototypes');
 
 const rpn = new Rpncc();
 

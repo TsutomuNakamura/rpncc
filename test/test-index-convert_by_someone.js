@@ -1,10 +1,7 @@
-import test from 'ava';
-import sinon from 'sinon';
-import rewire from 'rewire';
-
-import './lib/load_prototypes';
-
-var ccc = 0;
+const test = require('ava');
+const sinon = require('sinon');
+const rewire = require('rewire');
+require('./lib/load_prototypes');
 
 test.beforeEach.cb(t => {
     t.context.stub = {};

@@ -9,6 +9,9 @@
   "ava": {
     "files": [
       "test/**/test-*.js"
+    ],
+    "require": [
+      "esm"
     ]
   },
   "repository": {
@@ -30,6 +33,7 @@
   "homepage": "https://github.com/TsutomuNakamura/rpncc#readme",
   "devDependencies": {
     "ava": "^3.8.1",
+    "esm": "^3.2.25",
     "rewire": "^5.0.0",
     "sinon": "^9.0.2"
   },

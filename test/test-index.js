@@ -1,6 +1,6 @@
 import test from 'ava';
-import Rpncc from '../index';
-import './lib/load_prototypes';
+import Rpncc from '../index.js';
+import './lib/load_prototypes.js';
 
 const rpn = new Rpncc();
 

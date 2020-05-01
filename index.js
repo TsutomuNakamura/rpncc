@@ -1,7 +1,8 @@
-var chance = require('chance').Chance();
+import Chance from 'chance';
 
 function Rpncc() {
     var myself          = this;
+    var chance = Chance();
 
     /** Operators allowed in this program. These values declare the precedence. */
     const operators       = {
@@ -130,5 +131,6 @@ function Rpncc() {
         });
     }
 }
-module.exports = Rpncc;
+//module.exports = Rpncc;
+export default Rpncc;
 

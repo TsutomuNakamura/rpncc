@@ -2,9 +2,7 @@ import test from 'ava';
 import sinon from 'sinon';
 import rewire from 'rewire';
 
-import './lib/load_prototypes';
-
-var ccc = 0;
+import './lib/load_prototypes.js';
 
 test.beforeEach.cb(t => {
     t.context.stub = {};
@@ -14,7 +12,7 @@ test.beforeEach.cb(t => {
         integer: () => { return 0; },
         shuffle: sinon.spy()
     };
-    t.context.MockRpn = rewire('../index');
+    t.context.MockRpn = rewire('../index.js');
     t.context.MockRpn.__set__('chance', t.context.stub.chance);
     setTimeout(t.end);
 });
